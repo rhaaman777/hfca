@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Payment</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  {% load static %}
+  <link href="{% static 'assets/img/himan.jpg' %}" rel="icon">
+  <link href="{% static 'assets/img/himan.jpg' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/icofont/icofont.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/css/abc.css' %}" rel="stylesheet">
+</head>
+
+<body>
+  <script>
+
+  </script>
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div style="background-color:#000;"class="container-fluid">
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li style="color: #fff;">Payment</li>
+        </ol>
+        <h2 style="color:#ff0000">HFC</h2>
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+   <!-----------------====== Payment mothed ========
+    =============================================--->
+    <section class="payment">
+      <div class="container">
+        <form  method="POST">
+          {% csrf_token %}
+          <div class="form">
+            <span class="advanced" style="background:#ff0000">Order</span>
+            <div>
+              <label class="label">Your Name</label>
+              <input type="text" class="input" id="validation" name="name" placeholder="Name" pattern="[a-zA-z- ]{4,20}" title="please use atleat 4 characters and only letters" required>
+            </div>
+            <div>
+              <label class="label">Phone Number:</label>
+              <input type="tel" class="input" name="phone" placeholder="99999-88888" maxlength="10" data-mask="99999-99999" pattern="[6-7-8-9]{10,12}" title="Please Enter Valid Phone Number" required>
+            </div>
+            <div>
+              <label class="label">E-mail:</label>
+              <input type="email" class="input" name="email" placeholder="example@gmail.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+            </div>
+            <h6>Package Details:-</h6>
+            <div style="border:2px solid #dddddd;padding:5px 12px;border-radius:5px">
+             <span style="margin-left:50px">{{morePackages.days}}</span>
+            <div class="d-flex">
+              <div style="padding:0 12px;">
+                <h6>For Single</h6>
+                <span>Rs. <input type="number" name="singlePricea" value="{{morePackages.singlePrice}}" style="width:50px;border:none"></span>
+              </div>
+              <div style="padding:0 12px;">
+                <h6>For Couple</h6>
+                <span>Rs. <input type="number" name="couplePricea" value="{{morePackages.couplePrice}}" style="width:60px;border:none"></span>
+              </div>
+            </div>
+            <select class="form-control form-control-sm" name="select">
+              <option>For Single</option>
+              <option>For Couple</option>
+            </select>
+            </div>
+            </div>
+          </div>
+          </div>  
+            <button class="btn scrollto" style="background:#ff0000">Submit Now</button>
+          </div>
+        </form>
+      </div>
+      
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6 footer-contact">
+            <h3 style="color:white;">SBT Professional</h3>
+            <p>
+              152,Mugal Canal<br>
+              Second floor<br>
+              Karnal <br><br>
+              <strong>Phone:</strong>8295393035<br>
+              <strong>Email:</strong>Contact@sbtprofessionalsgmail.com<br>
+            </p>
+          </div>
+          <div class="col-lg-4 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Our Services</h4>
+            <div class="social-links text-center  pt-3 pt-lg-0">
+              <a style="background:#2962ff" href="https://twitter.com/SBTProfessiona3?s=09" class="twitter"><i class="bx bxl-twitter"></i></a>
+              <a style="background:#4682B4" href="https://www.facebook.com/SBTProfessionals" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a style="background:	#e43a3af1" href="https://www.instagram.com/sbt_professionals/?r=nametag" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a style="background:	#FFA500" href="#" class="snapchat"><i class="bx bxl-snapchat"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+</body>
+
+</html>
